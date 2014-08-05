@@ -67,7 +67,7 @@
                 [[NSUserDefaults standardUserDefaults] setObject:oauthTokenKeySecret forKey:requestTokenSecret];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 
-                NSString *authorizationURLWithParams = [NSString stringWithFormat:@"https://www.dropbox.com/1/oauth/authorize?oauth_token=%@&oauth_callback=mydropbox://userauthorization",oauthDict[oauthTokenKey]];
+                NSString *authorizationURLWithParams = [NSString stringWithFormat:@"https://www.dropbox.com/1/oauth/authorize?oauth_token=%@&oauth_callback=YOUR_DROPBOX_FOLDER_NAME://userauthorization",oauthDict[oauthTokenKey]];
                 
                 // escape codes
                 NSString *escapedURL = [authorizationURLWithParams stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
