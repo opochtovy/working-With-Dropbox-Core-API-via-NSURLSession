@@ -82,7 +82,7 @@
 // For example, in the URL http://www.example.com/index.html, the scheme is http
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    if ([[url scheme] isEqualToString:@"mydropbox"]) {
+    if ([[url scheme] isEqualToString:@"YOUR_DROPBOX_FOLDER_NAME"]) {
         [self exchangeRequestTokenForAccessToken];
     }
     return NO;
