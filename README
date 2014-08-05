@@ -1,0 +1,18 @@
+working-With-Dropbox-Core-API-via-NSURLSession
+=======================================================
+
+API illustrates the work with a web-service API (Dropbox Core API) via NSURLSession. It shows the detail creation of a session and private tasks (GET, POST, PUT) with data files (view, create, edit) and photos (view, upload).
+
+During my app’s realization I touched the following topics:
+
+1. How to use a web service Dropbox Core API to download the content of your account’s folder from that service. App shows the work with data files and images.
+
+2. How to use blocks with NSArrays, Grand Central Dispatch. API demonstrates using blocks for asynchronous processing.
+
+3. Basics of NSURLSession and its benefits:
+
+- Background uploads and downloads: With just a configuration option when the NSURLSession is created, you get all the benefits of background networking. 
+- Configurable container: Each NSURLSession is the configurable container for putting requests into. For example, if you need to set an HTTP header option you will only need to do this once and each request in the session will have the same configuration.
+- Subclassable and private storage: NSURLSession is subclassable and you can configure a session to use private storage on a per session basis. This allows you to have private storage objects outside of the global state.
+- Improved authentication handling: Authentication is done on a specific connection basis. When using NSURLConnection if an authentication challenge was issued, the challenge would come back for an arbitrary request, you wouldn’t know exactly what request was getting the challenge. With NSURLSession, the delegate handles authentication.
+- Rich delegate model: NSURLConnection has some asynchronous block based methods, however a delegate cannot be used with them. When the request is made it either works or fails, even if authentication was needed. With NSURLSession you can have a hybrid approach, use the asynchronous block based methods and also setup a delegate to handle authentication.Uploads and downloads through the file system: This encourages the separation of the data (file contents) from the metadata (the URL and settings).
