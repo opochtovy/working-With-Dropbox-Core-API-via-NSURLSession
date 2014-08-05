@@ -26,16 +26,14 @@
 // 4. Finally, provide a name for your app, it doesn’t matter what you choose as long as it’s unique. Dropbox will let you know if you’ve chosen a name that’s already in use.
 // 5. After you click "Create App" you’ll see the next screen containing the App key and App secret. You need them to put right here below:
 
-// #warning INSERT YOUR OWN API KEY and SECRET HERE
-static NSString *apiKey = @"87docnqtfoasdl2";
-static NSString *appSecret = @"mtmv24wcl988h1n";
-//static NSString *apiKey = @"7czgfp8bh1pron2";
-//static NSString *appSecret = @"z9hrj4k3hw9q2jq";
+#warning INSERT YOUR OWN API KEY and SECRET HERE
+static NSString *apiKey = @"API KEY";
+static NSString *appSecret = @"SECRET";
 
 // 6. Next, create a folder in the root directory of your main Dropbox folder and name it whatever you wish. If you share this folder with other Dropbox users and send them a build of your app, they will be able to create notes and upload photos for all to see. Put the name of this folder right here below:
 
-// #warning THIS FOLDER MUST BE CREATED AT THE TOP LEVEL OF YOUR DROPBOX FOLDER, you can then share this folder with others
-NSString * const appFolder = @"mydropbox";
+#warning THIS FOLDER MUST BE CREATED AT THE TOP LEVEL OF YOUR DROPBOX FOLDER, you can then share this folder with others
+NSString * const appFolder = @"YOUR DROPBOX FOLDER";
 
 // 7. To distribute this app to other users and give them access tokens, you will need to turn on the “Enable additional users” setting for your Dropbox Platform App.
 
@@ -166,7 +164,7 @@ NSString * const accessTokenSecret = @"accessTokenSecret";
 // this method creates a random file name; dropbox will handle it if we overwrite a file and create a new name
 + (NSURL *)createPhotoUploadURL
 {
-    NSString *urlWithParams = [NSString stringWithFormat:@"https://api-content.dropbox.com/1/files_put/dropbox/%@/photos/mydropbox_%i.jpg",appFolder,arc4random() % 1000];
+    NSString *urlWithParams = [NSString stringWithFormat:@"https://api-content.dropbox.com/1/files_put/dropbox/%@/photos/YOUR_DROPBOX_FOLDER_NAME_%i.jpg",appFolder,arc4random() % 1000];
     NSURL *url = [NSURL URLWithString:urlWithParams];
     return url;
 }
